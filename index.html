@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/estilo.css" />
+    <title>DevAcademy</title>
+  </head>
+  <body>
+    <header class="main-nav">
+      <div class="container">
+        <h1>DevAcademy</h1>
+        <button
+          class="hamburger"
+          id="btnMenu"
+          aria-expanded="false"
+          aria-label="Abrir Menu"
+        >
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+        <nav class="container">
+          <a href="#" class="logo">DevAcademy</a>
+          <ul class="nav-links">
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Mentoria</a></li>
+            <li><a href="#">Comunidade</a></li>
+            <li><a href="#">Entrar</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="cursos-container">
+      <section class="header-filter">
+        <div class="filter-group">
+          <input
+            type="text"
+            id="filterInput"
+            placeholder="Buscar tecnologia (ex: TypeScript)"
+            aria-label="Filtrar planos"
+          />
+        </div>
+      </section>
+
+      <div id="planosGrid" class="planos-grid">
+        <p class="voltar">Carregando as melhores ofertas para você...</p>
+      </div>
+    </main>
+  </body>
+</html>
