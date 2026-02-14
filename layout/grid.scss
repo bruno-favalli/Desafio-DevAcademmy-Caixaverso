@@ -1,0 +1,6 @@
+#planosGrid {
+  display: grid;
+  /* O Grid se auto-ajusta: mínimo de 280px por card ou 100% no mobile */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 2rem;
+}

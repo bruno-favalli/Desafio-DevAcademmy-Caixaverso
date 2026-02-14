@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+/* 3. FILTRO (Mobile First) */
+.header-filter {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#filterInput {
+  margin: 20px;
+  width: 85%;
+  max-width: 500px;
+  padding: 1rem 1.5rem;
+  background: $cor-fundo-secundario;
+  border: 1px solid $cor-borda;
+  border-radius: 10px;
+  color: white;
+  font-size: 1rem;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+#filterInput:focus {
+  outline: none;
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.2);
+}
