@@ -1,0 +1,7 @@
+[
+    { "id": 1, "nivel": "Iniciante", "nomeCurso":"TypeScript Fundamentals", "assunto": "Linguagens", "descricao": "Domine a tipagem estática." },
+    { "id": 2, "nivel": "Avançado", "nomeCurso": "Arquitetura Clean", "assunto": "Arquitetura", "descricao":"Sistemas escaláveis e robustos." },
+    { "id": 3, "nivel": "Intermediario", "nomeCurso": "CSS Moderno", "assunto": "Frontend", "descricao": "Layouts com Grid e Flexbox." },
+    { "id": 4, "nivel": "Avançado", "nomeCurso": "Node.js Enterprise", "assunto": "Backend", "descricao": "APIS escaláveis com padrões de mercado." }
+    
+  ]
