@@ -11,4 +11,11 @@
     font-family: 'Inter', sans-serif;
     background-color: $cor-fundo-primario;
     color: #333;
+    flex-direction: column;
+    display: flex;
+    min-height: 100vh; 
+    
+  }
+  .cursos-container {
+    flex: 1; /* Ocupa todo o espaço que sobrar, empurrando o footer */
   }

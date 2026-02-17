@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.plan-card {
+    background: $cor-fundo-secundario;
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.0rem;
+    border: 1px solid #334155;
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.5s ease forwards;
+    margin-left: 15px;
+}
+
+.plan-card button {
+    margin-top: auto;
+}
+
+.label {
+    background: $cor-destaque-primario;
+    color: $cor-preto;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;    
+}
+
+.card-header h3 {
+    margin-top: 20px;
+    font-size: 1.20rem;
+    line-height: 1.2;
+    color: $cor-branco;
+}
+
+.card-body p {
+    font-size: 1.0rem;
+    color: $cor-branco;
+    
+}
+
+

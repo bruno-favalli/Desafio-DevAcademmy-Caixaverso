@@ -89,7 +89,7 @@ class Cursos {
                     <h3>${p.nomeCurso}</h3>
                 </div>
                 <div class="card-body">
-                <small><p><strong>${p.assunto}</strong> ${p.descricao}</small></p>
+                <small><p><strong>${p.assunto}:</strong> ${p.descricao}</small></p>
                 </div>
                 <button class="btn-primary">Saber mais</button>
             </article>

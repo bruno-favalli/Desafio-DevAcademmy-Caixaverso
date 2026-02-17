@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.footer {
+    background: $cor-fundo-secundario;
+    color: $cor-branco;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid #1e293b; /* Linha sutil no topo */
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Garante que fique responsivo em telas menores */
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+  }
+
+  .footer-logo {
+    color: $cor-destaque-primario;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .footer-description {
+    color: $cor-branco;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    max-width: 250px;
+  }
+
+  .footer-title {
+    color: $cor-destaque-primario;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo dos Links */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+  
+  .footer-links a {
+    color: $cor-branco;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: $cor-destaque-primario;
+  }
+
+/* Estilo da Newsletter */
+.newsletter-form {
+    display: flex;
+    height: 40px;
+  }
+  
+  .newsletter-input {
+    background-color: $cor-fundo-primario;  
+    border: 1px solid #1e293b;
+    border-radius: 4px 0 0 4px;
+    padding: 0 15px;
+    color: $cor-preto;
+    flex: 1;
+    outline: none;
+  }
+  .newsletter-button {
+    background-color: $cor-destaque-primario;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    padding: 0 20px;
+    color: $cor-preto;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  }
+
+  .newsletter-button:hover {
+    opacity: 0.8;
+  }
+
+  .footer-dev{
+    color: $cor-branco;
+  }
+  
+  /* Ajuste Mobile */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: left;
+    }
+  }

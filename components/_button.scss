@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+
+.btn-primary{
+    background-color: $cor-fundo-secundario;
+    color: $cor-destaque-primario;
+    border: solid 1px $cor-destaque-primario;
+    padding: 0.5rem 1rem;
+    margin: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    align-self: flex-end;
+}
