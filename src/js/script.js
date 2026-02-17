@@ -3,94 +3,94 @@
  * Interface que espelha o nosso JSON.
  * Garante que não tentaremos acessar propriedades inexistentes.
  */
-/*class Consorcio {
-  private container: HTMLElement | null; // Onde os cards serão inseridos
-  private searchInput: HTMLInputElement | null; // O campo de busca
-  private allPlans: ConsorcioPlano[] = []; // Cache local de todos os planos
-
-  constructor() {
-    // Tenta localizar no HTML o elemento onde os cards serão exibidos (o grid)
-    this.container = document.getElementById("planosGrid");
-
-    // Tenta localizar o campo de entrada de texto usado para o filtro
-    // O "as HTMLInputElement" avisa ao TypeScript que este elemento terá a propriedade '.value'
-    this.searchInput = document.getElementById(
-      "filterInput",
-    ) as HTMLInputElement;
-
-    //Verificação de segurança essencial
-    // O código dentro do 'if' só será executado se ambos os elementos acima forem encontrados
-    if (this.container && this.searchInput) {
-      // Inicia o processo de busca de dados (fetch) e configuração do sistema
-      this.init();
-    }
-  }
-  // Promessa
-  private async init(): Promise<void> {
-    try {
-      // Busca o arquivo JSON de forma assíncrona
-      const response = await fetch("./planos.json");
-      if (!response.ok) throw new Error("Erro ao carregar dados");
-
-      // Converte a resposta bruta em um objeto JS/TS
-      this.allPlans = await response.json();
-      this.render(this.allPlans); // Desenha os cards iniciais
-      this.setupFilter(); // Ativa o campo de busca
-    } catch (error) {
-      // Caso o arquivo falte ou o servidor caia, avisa o usuário
-      if (this.container) {
-        this.container.innerHTML = `<p>Erro ao carregar os planos.</p>`;
-      }
-    }
-  }
-
-  private setupFilter(): void {
-    // Adiciona um ouvinte ao input de busca que dispara toda vez que o usuário digita algo
-    this.searchInput?.addEventListener("input", () => {
-      // Captura o valor digitado, transforma em minúsculas para a busca não ser sensível ao caso (Case Insensitive)
-      // Se o valor for nulo, define uma string vazia como padrão
-      const query = this.searchInput?.value.toLowerCase() || "";
-      // Cria um novo array apenas com os planos que atendem aos critérios de busca
-      const filtered = this.allPlans.filter(
-        (p) =>
-          // Critério 1: O tipo do consórcio (ex: "carro") contém o que foi digitado?
-          p.tipo.toLowerCase().includes(query) ||
-          // Critério 2: O valor do crédito (convertido para texto) contém os números digitados?
-          p.valorCredito.toString().includes(query),
-      );
-      // Chama o método de renderização passando apenas a lista filtrada para atualizar a tela
-      this.render(filtered);
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
-  }
-  private render(planos: ConsorcioPlano[]): void {
-    if (!this.container) return;
-
-    // Se a busca não encontrar nada, exibe mensagem amigável
-    if (planos.length === 0) {
-      this.container.innerHTML = `<p class="empty-msg">Nenhum plano encontrado.</p>`;
-      return;
+};
+class Cursos {
+    constructor() {
+        this.allCursos = []; // Cache local de todos os planos
+        // Tenta localizar no HTML o elemento onde os cards serão exibidos (o grid)
+        this.container = document.getElementById("planosGrid");
+        // Tenta localizar o campo de entrada de texto usado para o filtro
+        // O "as HTMLInputElement" avisa ao TypeScript que este elemento terá a propriedade '.value'
+        this.searchInput = document.getElementById("filterInput");
+        //Verificação de segurança essencial
+        // O código dentro do 'if' só será executado se ambos os elementos acima forem encontrados
+        if (this.container && this.searchInput) {
+            // Inicia o processo de busca de dados (fetch) e configuração do sistema
+            this.init();
+        }
     }
-
-    // Transforma cada objeto de plano em um bloco de HTML (Card)
-    this.container.innerHTML = planos
-      .map(
-        (p) => `
+    // Promessa
+    init() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                // Busca o arquivo JSON de forma assíncrona
+                const response = yield fetch("./cursos.json");
+                if (!response.ok)
+                    throw new Error("Erro ao carregar dados");
+                // Converte a resposta bruta em um objeto JS/TS
+                this.allCursos = yield response.json();
+                this.render(this.allCursos); // Desenha os cards iniciais
+                this.setupFilter(); // Ativa o campo de busca
+            }
+            catch (error) {
+                // Caso o arquivo falte ou o servidor caia, avisa o usuário
+                if (this.container) {
+                    this.container.innerHTML = `<p>Erro ao carregar os planos.</p>`;
+                }
+            }
+        });
+    }
+    setupFilter() {
+        var _a;
+        // Adiciona um ouvinte ao input de busca que dispara toda vez que o usuário digita algo
+        (_a = this.searchInput) === null || _a === void 0 ? void 0 : _a.addEventListener("input", () => {
+            var _a;
+            // Captura o valor digitado, transforma em minúsculas para a busca não ser sensível ao caso (Case Insensitive)
+            // Se o valor for nulo, define uma string vazia como padrão
+            const query = ((_a = this.searchInput) === null || _a === void 0 ? void 0 : _a.value.toLowerCase()) || "";
+            // Cria um novo array apenas com os planos que atendem aos critérios de busca
+            const filtered = this.allCursos.filter((p) => 
+            // Critério 1: O tipo do consórcio (ex: "carro") contém o que foi digitado?
+            p.nivel.toLowerCase().includes(query) ||
+                // Critério 2: O valor do crédito (convertido para texto) contém os números digitados?
+                p.assunto.toString().includes(query));
+            // Chama o método de renderização passando apenas a lista filtrada para atualizar a tela
+            this.render(filtered);
+        });
+    }
+    render(planos) {
+        if (!this.container)
+            return;
+        // Se a busca não encontrar nada, exibe mensagem amigável
+        if (planos.length === 0) {
+            this.container.innerHTML = `<p class="empty-msg">Nenhum plano encontrado.</p>`;
+            return;
+        }
+        // Transforma cada objeto de plano em um bloco de HTML (Card)
+        this.container.innerHTML = planos
+            .map((p) => `
             <article class="plan-card">
                 <div class="card-header">
-                    <span class="label">${p.tipo}</span>
-                    <h3>Crédito: R$ ${p.valorCredito.toLocaleString("pt-BR")}</h3>
+                    <span class="label">${p.nivel}</span>
+                    <h3>${p.nomeCurso}</h3>
                 </div>
                 <div class="card-body">
-                    <p>Parcelas de <strong>R$ ${p.parcela.toLocaleString("pt-BR")}</strong></p>
-                    <small>Em até ${p.prazo} meses</small>
+                <small><p><strong>${p.assunto}</strong> ${p.descricao}</small></p>
                 </div>
-                <button class="btn-primary">Quero Simular</button>
+                <button class="btn-primary">Saber mais</button>
             </article>
-        `,
-      )
-      .join(""); // O .join('') evita que apareçam vírgulas entre os cards
-  }
-}*/
+        `)
+            .join(""); // O .join('') evita que apareçam vírgulas entre os cards
+    }
+}
 class MenuNavigation {
     constructor() {
         // Busca o botão no HTML pelo ID e força o tipo (casting) para Button
@@ -140,5 +140,5 @@ class MenuNavigation {
 // Inicialização segura
 window.addEventListener("DOMContentLoaded", () => {
     new MenuNavigation(); // Instancia o menu
-    // new Consorcio(); // Instancia o buscador de planos
+    new Cursos(); // Instancia o buscador de planos
 });

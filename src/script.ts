@@ -3,18 +3,18 @@
  * Garante que não tentaremos acessar propriedades inexistentes.
  */
 
-interface ConsorcioPlano {
+interface CursosOferecidos {
   id: number; // Identificador único do plano
-  tipo: string; // Ex: "Imóvel", "Automóvel"
-  valorCredito: number; // Valor total da carta de crédito
-  parcela: number; // Valor mensal
-  prazo: number; // Quantidade de meses
+  nivel: string; // Ex: "Imóvel", "Automóvel"
+  nomeCurso: string; // Valor total da carta de crédito
+  assunto: string; // Valor mensal
+  descricao: string; // Quantidade de meses
 }
 
-/*class Consorcio {
+class Cursos {
   private container: HTMLElement | null; // Onde os cards serão inseridos
   private searchInput: HTMLInputElement | null; // O campo de busca
-  private allPlans: ConsorcioPlano[] = []; // Cache local de todos os planos
+  private allCursos: CursosOferecidos[] = []; // Cache local de todos os planos
 
   constructor() {
     // Tenta localizar no HTML o elemento onde os cards serão exibidos (o grid)
@@ -37,12 +37,12 @@ interface ConsorcioPlano {
   private async init(): Promise<void> {
     try {
       // Busca o arquivo JSON de forma assíncrona
-      const response = await fetch("./planos.json");
+      const response = await fetch("./cursos.json");
       if (!response.ok) throw new Error("Erro ao carregar dados");
 
       // Converte a resposta bruta em um objeto JS/TS
-      this.allPlans = await response.json();
-      this.render(this.allPlans); // Desenha os cards iniciais
+      this.allCursos = await response.json();
+      this.render(this.allCursos); // Desenha os cards iniciais
       this.setupFilter(); // Ativa o campo de busca
     } catch (error) {
       // Caso o arquivo falte ou o servidor caia, avisa o usuário
@@ -59,18 +59,18 @@ interface ConsorcioPlano {
       // Se o valor for nulo, define uma string vazia como padrão
       const query = this.searchInput?.value.toLowerCase() || "";
       // Cria um novo array apenas com os planos que atendem aos critérios de busca
-      const filtered = this.allPlans.filter(
+      const filtered = this.allCursos.filter(
         (p) =>
           // Critério 1: O tipo do consórcio (ex: "carro") contém o que foi digitado?
-          p.tipo.toLowerCase().includes(query) ||
+          p.nivel.toLowerCase().includes(query) ||
           // Critério 2: O valor do crédito (convertido para texto) contém os números digitados?
-          p.valorCredito.toString().includes(query),
+          p.assunto.toString().includes(query),
       );
       // Chama o método de renderização passando apenas a lista filtrada para atualizar a tela
       this.render(filtered);
     });
   }
-  private render(planos: ConsorcioPlano[]): void {
+  private render(planos: CursosOferecidos[]): void {
     if (!this.container) return;
 
     // Se a busca não encontrar nada, exibe mensagem amigável
@@ -85,20 +85,19 @@ interface ConsorcioPlano {
         (p) => `
             <article class="plan-card">
                 <div class="card-header">
-                    <span class="label">${p.tipo}</span>
-                    <h3>Crédito: R$ ${p.valorCredito.toLocaleString("pt-BR")}</h3>
+                    <span class="label">${p.nivel}</span>
+                    <h3>${p.nomeCurso}</h3>
                 </div>
                 <div class="card-body">
-                    <p>Parcelas de <strong>R$ ${p.parcela.toLocaleString("pt-BR")}</strong></p>
-                    <small>Em até ${p.prazo} meses</small>
+                <small><p><strong>${p.assunto}</strong> ${p.descricao}</small></p>
                 </div>
-                <button class="btn-primary">Quero Simular</button>
+                <button class="btn-primary">Saber mais</button>
             </article>
         `,
       )
       .join(""); // O .join('') evita que apareçam vírgulas entre os cards
   }
-}*/
+}
 class MenuNavigation {
   // Declara a propriedade para o botão, podendo ser o elemento HTML ou nulo
   private btn: HTMLButtonElement | null;
@@ -155,5 +154,5 @@ class MenuNavigation {
 // Inicialização segura
 window.addEventListener("DOMContentLoaded", () => {
   new MenuNavigation(); // Instancia o menu
-  // new Consorcio(); // Instancia o buscador de planos
+  new Cursos(); // Instancia o buscador de planos
 });
