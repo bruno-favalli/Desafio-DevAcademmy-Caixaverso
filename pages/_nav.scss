@@ -12,6 +12,8 @@ h1 {
   z-index: 1000;
   height: 140px;
   background-color: $cor-fundo-primario;
+  font-family: $font-family;
+  
 }
 
 .nav-content {
@@ -54,6 +56,8 @@ h1 {
   justify-content: center;
   transition: 0.4s ease-in-out;
   padding-top: 60px;
+  font-family: $font-family;
+ 
 }
 
 .nav-links.active {
@@ -73,6 +77,8 @@ h1 {
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
+  font-family: $font-family;
+  
 }
 
 .hamburger.open .line:nth-child(1) {
@@ -103,6 +109,8 @@ h1 {
       height: auto;
       background: none;
       transition: none;
+      font-family: $font-family;
+      
   }
 
   .nav-links ul {
@@ -110,7 +118,11 @@ h1 {
       gap: 2rem;
   }
 
-  .nav-links a { font-size: 1rem; }
+  .nav-links a { 
+    font-size: 1rem;
+    font-family: $font-family; 
+ 
+  }
 
   .main-nav{
     margin-bottom: 90px;

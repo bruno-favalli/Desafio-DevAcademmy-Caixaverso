@@ -1,21 +1,19 @@
-// ================================
-// 🎨 PALETA DE CORES EXTRAÍDA
-// ================================
-
-// Backgrounds
-
 // Fundos
-$cor-fundo-primario: #0f172a; // fundo geral (bem escuro)
-$cor-fundo-secundario: #1e293b; // áreas internas / seções
+$cor-fundo-primario: #0f172a; 
+$cor-fundo-secundario: #1e293b; 
 
 // Superfícies e elementos
-$cor-superficie: #495362; // cards, caixas, painéis
-$cor-borda: #888e98; // bordas, divisores, textos suaves
+$cor-superficie: #495362; 
+$cor-borda: #888e98; 
 
 // Destaques
-$cor-destaque-primario: #00f2ff; // ciano (links, botões, ações)
-$cor-destaque-secundario: #107888; // teal (badges, detalhes)
+$cor-destaque-primario: #00f2ff; 
+$cor-destaque-secundario: #107888; 
 
 // Paleta auxiliar
 $cor-branco: #ffffff;
 $cor-preto: #000000;
+
+
+//font
+$font-family: 'Inter', sans-serif;

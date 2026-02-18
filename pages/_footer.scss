@@ -6,7 +6,7 @@
     color: $cor-branco;
     padding: 60px 20px;
     text-align: center;
-    border-top: 1px solid #1e293b; /* Linha sutil no topo */
+    border-top: 1px solid #1e293b; 
 }
 
 .footer-container {
@@ -14,7 +14,7 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Garante que fique responsivo em telas menores */
+    flex-wrap: wrap; 
     gap: 20px;
     align-items: center;
   }
@@ -93,14 +93,12 @@
     transition: opacity 0.3s;
     margin-left: 7px;
     width: 20%;
-    min-width: 50px; /* Garante um tamanho mínimo para não esmagar o 'OK' */
-  height: 40px;    /* Define uma altura para alinhar com o input */
-
-  /* Mágica do Alinhamento Central */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    min-width: 50px; 
+    height: 40px;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     
   }
 

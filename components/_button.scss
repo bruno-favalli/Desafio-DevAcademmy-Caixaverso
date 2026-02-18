@@ -14,3 +14,8 @@
     width: 100%;
     align-self: flex-end;
 }
+
+.plan-card:hover button {
+    background-color: $cor-destaque-primario;
+    color: $cor-fundo-secundario;
+}

@@ -11,9 +11,13 @@
     border: 1px solid #334155;
     transition: transform 0.3s ease;
     animation: fadeIn 0.5s ease forwards;
-    margin-left: 15px;
-    margin-bottom: 25px;
-    margin-right: 15px;;
+    height: 100%;
+}
+
+;.plan-card:hover {
+    transform: translateY(-5px);
+    border-color: $cor-destaque-primario;
+    box-shadow: 0 8px 20px -10px rgba($cor-destaque-primario, 0.5);
 }
 
 .plan-card button {
