@@ -16,7 +16,7 @@
     justify-content: space-between;
     flex-wrap: wrap; /* Garante que fique responsivo em telas menores */
     gap: 20px;
-    align-items: flex-start;
+    align-items: center;
   }
   
   .footer-column {
@@ -85,12 +85,23 @@
   .newsletter-button {
     background-color: $cor-destaque-primario;
     border: none;
-    border-radius: 0 4px 4px 0;
-    padding: 0 20px;
+    border-radius: 7px;
+    padding: 0;
     color: $cor-preto;
     font-weight: bold;
     cursor: pointer;
     transition: opacity 0.3s;
+    margin-left: 7px;
+    width: 20%;
+    min-width: 50px; /* Garante um tamanho mínimo para não esmagar o 'OK' */
+  height: 40px;    /* Define uma altura para alinhar com o input */
+
+  /* Mágica do Alinhamento Central */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+    
   }
 
   .newsletter-button:hover {
@@ -106,5 +117,6 @@
     .footer-container {
       flex-direction: column;
       text-align: left;
+      
     }
   }

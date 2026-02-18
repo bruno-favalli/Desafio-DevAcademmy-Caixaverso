@@ -7,11 +7,11 @@ h1 {
 }
 .main-nav {
   padding: 1rem 0;
-  border-bottom: 1px solid #334155;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   height: 140px;
+  background-color: $cor-fundo-primario;
 }
 
 .nav-content {
@@ -83,4 +83,36 @@ h1 {
 }
 .hamburger.open .line:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .cursos-container {
+    margin-top: 80px; /* Ajuste esse valor para a altura exata do seu header */
+  }
+}
+
+
+@media (min-width: 768px) {
+
+   
+  .hamburger { display: none; } /* Esconde o botão no PC */
+
+  .nav-links {
+      position: static;
+      width: auto;
+      height: auto;
+      background: none;
+      transition: none;
+  }
+
+  .nav-links ul {
+      display: flex;
+      gap: 2rem;
+  }
+
+  .nav-links a { font-size: 1rem; }
+
+  .main-nav{
+    margin-bottom: 90px;
+  }
 }
